@@ -1,368 +1,246 @@
-# Ovarian Cancer Detection using Existing ViT and Proposed ReSA Transformer
+# 🧬 Ovarian Cancer Detection and Analysis using Existing ViT and Proposed ReSA Transformer
 
-## Project Overview
+## 📌 Project Overview
 
-This project is an AI-based medical image analysis system developed for ovarian cancer histopathological image classification. The system analyzes tissue image patches and identifies important tissue/cell regions such as macrophages, neutrophils, and necrosis using deep learning models.
+This project focuses on the detection and analysis of Ovarian Cancer using advanced Deep Learning and Histopathological Image Analysis techniques.
 
-The project compares:
+The system analyzes Whole Slide Histopathological Images (WSI) and extracts tissue patches to identify important cellular regions such as macrophages, neutrophils, and necrosis. By leveraging Vision Transformer (ViT) and the proposed ReSA (Residual Spatial Attention) Transformer architecture, the project aims to assist pathologists in accurate tissue classification and cancer analysis.
 
-1. Existing Vision Transformer (ViT)
-2. Proposed ReSA Transformer
-
-The proposed model improves tissue understanding using contextual learning, spatial attention, and multi-scale feature encoding.
+The proposed ReSA Transformer enhances tissue understanding through contextual learning, multi-scale feature encoding, structure-aware positional encoding, and focus-aware attention mechanisms.
 
 ---
 
-# Problem Statement
+## 🎯 Objectives
 
-Manual analysis of histopathological whole slide images is time-consuming and requires expert pathologists. Large Whole Slide Images (WSI) contain complex tissue structures that are difficult to process directly.
-
-This project aims to assist pathologists by automatically analyzing tissue patches using transformer-based deep learning models for faster and more efficient ovarian cancer tissue analysis.
-
----
-
-# Objectives
-
-- Analyze histopathological ovarian cancer tissue images
-- Perform patch extraction from Whole Slide Images
-- Apply preprocessing techniques to improve image quality
-- Train Existing Vision Transformer (ViT)
-- Develop a Proposed ReSA Transformer model
-- Improve tissue feature understanding using contextual learning
-- Compare performance between Existing and Proposed models
+* Detect ovarian cancer tissue patterns from histopathological images
+* Analyze tissue morphology using Deep Learning
+* Perform automated patch extraction from Whole Slide Images
+* Improve tissue understanding using contextual learning
+* Compare Existing ViT and Proposed ReSA Transformer
+* Assist pathologists with automated image analysis
+* Enhance diagnostic accuracy and efficiency
 
 ---
 
-# Dataset Information
+## 🌟 Key Features
 
-| Parameter | Details |
-|---|---|
-| Dataset Type | Histopathological Whole Slide Images |
-| Original Format | SVS |
-| Total Dataset Size | Around 250 GB |
-| Single SVS Image Size | Around 12–15 GB |
-| Data Source | Histopathological Tissue Slides |
+✅ Histopathological Whole Slide Image Analysis
 
-The original SVS files were extremely large and could not be directly used for training. Therefore, smaller image patches were extracted from the Whole Slide Images.
+✅ Automated Patch Extraction
+
+✅ Wavelet-based Image Denoising
+
+✅ White Background Removal
+
+✅ Existing Vision Transformer (ViT)
+
+✅ Proposed ReSA Transformer Architecture
+
+✅ Multi-Scale Feature Encoding
+
+✅ Structure-Aware Positional Encoding
+
+✅ Focus-Aware Attention Mechanism
+
+✅ Tissue Classification and Regression Analysis
+
+✅ Performance Evaluation and Comparison
 
 ---
 
-# Workflow
+## 🧠 Technologies Used
+
+### Programming Language
+
+Python
+
+### Deep Learning Frameworks
+
+PyTorch
+
+### Computer Vision
+
+OpenCV
+
+### Data Processing
+
+NumPy
+
+Pandas
+
+PIL
+
+### AI Techniques
+
+Vision Transformer (ViT)
+
+Residual Spatial Attention (ReSA) Transformer
+
+Multi-Head Self Attention
+
+Multi-Scale Feature Learning
+
+Medical Image Analysis
+
+---
+
+## 📂 Project Structure
 
 ```text
-Whole Slide Image (SVS)
-        ↓
+Ovarian-Cancer-Detection/
+│
+├── dataset/
+│
+├── preprocessing/
+│
+├── patch_extraction/
+│
+├── models/
+│   ├── vit_model.py
+│   ├── resa_transformer.py
+│   └── training.py
+│
+├── evaluation/
+│
+├── outputs/
+│
+├── notebooks/
+│
+└── README.md
+```
+
+---
+
+## 🚀 Project Workflow
+
+1. Collect Histopathological Whole Slide Images (WSI)
+2. Extract tissue patches from large SVS images
+3. Apply preprocessing and image enhancement
+4. Train Existing Vision Transformer (ViT)
+5. Train Proposed ReSA Transformer
+6. Learn contextual tissue representations
+7. Perform tissue classification and regression
+8. Evaluate model performance
+9. Generate predictions and visual outputs
+10. Compare Existing and Proposed models
+
+---
+
+## 🖥️ System Architecture
+
+```text
+Whole Slide Images (SVS)
+
+⬇
+
 Patch Extraction
-        ↓
-Preprocessing
-        ↓
-Existing ViT Training
-        ↓
-Proposed ReSA Transformer Training
-        ↓
-Performance Comparison
-        ↓
-Prediction Output
-```
 
----
+⬇
 
-# Preprocessing Techniques
+Image Preprocessing
 
-The following preprocessing steps were applied before training:
+⬇
 
-## 1. Patch Extraction
+Existing ViT Model
 
-Large SVS images were divided into smaller image patches for efficient training.
+⬇
 
-## 2. Wavelet Denoising
+Proposed ReSA Transformer
 
-Wavelet-based denoising was used to reduce unwanted image noise while preserving tissue information.
+⬇
 
-## 3. White Background Removal
-
-White empty regions were removed using thresholding and morphological operations to retain only tissue regions.
-
-## 4. Data Augmentation
-
-The following augmentation techniques were used:
-
-- Horizontal Flip
-- Vertical Flip
-- Rotation
-- Color Jitter
-- Image Resizing
-
----
-
-# Existing Vision Transformer (ViT)
-
-The Existing ViT model acts as the baseline model.
-
-## Existing ViT Workflow
-
-```text
-Input Image Patch
-        ↓
-Patch Embedding
-        ↓
-Positional Encoding
-        ↓
-Transformer Encoder
-        ↓
-Feature Aggregation
-        ↓
-Classification / Regression Output
-```
-
-## Existing ViT Features
-
-- Standard patch embedding
-- Normal positional encoding
-- Standard transformer attention
-- Average feature aggregation
-- Basic classification and regression
-
----
-
-# Proposed ReSA Transformer
-
-The proposed model improves the standard Vision Transformer by introducing contextual and spatial learning.
-
-## ReSA Full Form
-
-```text
-Residual Spatial Attention Transformer
-```
-
----
-
-# Proposed Model Workflow
-
-```text
-Whole Slide Image
-        ↓
-Patch and Spatial Block Extraction
-        ↓
-Contextual Feature Embedding
-        ↓
 Multi-Scale Feature Encoding
-        ↓
-Structure-Aware Positional Encoding
-        ↓
-ReSA Transformer
-        ↓
+
+⬇
+
 Focus-Aware Attention
-        ↓
-Classification Output
+
+⬇
+
+Tissue Classification & Regression
+
+⬇
+
+Performance Evaluation
 ```
 
 ---
 
-# Proposed Model Steps
+## 📊 Model Evaluation Metrics
 
-## Step 1: Patch and Spatial Block Extraction
+The model performance is evaluated using:
 
-The Whole Slide Image is divided into:
-
-- Small image patches
-- Spatial tissue blocks
-
-This helps the model process very large histopathological images efficiently.
-
----
-
-## Step 2: Contextual Feature Extraction
-
-For every image patch:
-
-- Patch coordinates are extracted
-- Nearby tissue context is learned
-
-This helps the model understand local biological relationships.
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Mean Absolute Error (MAE)
+* Confusion Matrix
+* ROC Curve
+* Classification Report
 
 ---
 
-## Step 3: Multi-Scale Feature Encoding
+## 📈 Results
 
-The model analyzes tissue information at multiple scales:
+### Existing Vision Transformer (ViT)
 
-- Small scale
-- Medium scale
-- Large scale
+* Validation Accuracy: 98.94%
+* F1 Score: 0.9892
+* Precision: 0.9895
+* Recall: 0.9894
 
-This helps detect both:
+### Proposed ReSA Transformer
 
-- Fine cellular details
-- Large tissue structures
+* Validation Accuracy: 99.65%
+* F1 Score: 0.9965
+* Precision: 0.9965
+* Recall: 0.9965
 
----
+### Performance Improvement
 
-## Step 4: Structure-Aware Positional Encoding
-
-Unlike normal ViT positional encoding, the proposed model learns:
-
-- Spatial tissue relationships
-- Biological contextual information
-
-This improves tissue understanding.
-
----
-
-## Step 5: ReSA Transformer
-
-The ReSA Transformer processes tissue blocks using:
-
-- Context-aware attention
-- Spatial learning
-- Memory-efficient aggregation
-
-The model compares neighboring tissue blocks and updates global memory to improve understanding of overall cancer structure.
+* Improved contextual tissue understanding
+* Better classification accuracy
+* Enhanced feature extraction
+* Reduced missed predictions
+* More efficient transformer-based learning
 
 ---
 
-## Step 6: Focus-Aware Attention
+## 🔮 Future Enhancements
 
-The model automatically focuses on important cancer regions while suppressing irrelevant background information.
+🔹 Real-time pathology assistance systems
 
-This improves classification performance.
+🔹 Multi-cancer histopathological analysis
 
----
+🔹 Explainable AI visualizations
 
-## Step 7: Classification Output
+🔹 Clinical decision support integration
 
-The final model predicts:
+🔹 Cloud-based deployment
 
-- Macrophage regions
-- Neutrophil regions
-- Necrosis regions
+🔹 Integration with hospital diagnostic systems
 
-It also performs percentage regression analysis.
+🔹 Advanced cancer grading and staging
 
----
-
-# Innovation in Proposed Model
-
-The Proposed ReSA Transformer introduces:
-
-- Multi-scale feature encoding
-- Context-aware learning
-- Structure-aware positional encoding
-- Focus-aware attention
-- Spatial tissue understanding
-- Memory-efficient transformer processing
-
-These additions improve histopathological tissue understanding compared to the standard ViT.
+🔹 Large-scale multi-center dataset validation
 
 ---
 
-# Algorithms and Techniques Used
+## 👩‍💻 Developed By
 
-| Stage | Algorithm / Technique |
-|---|---|
-| Patch Extraction | Patch-based Image Splitting |
-| Noise Removal | Wavelet Denoising |
-| Background Removal | Thresholding + Morphological Operations |
-| Existing Model | Vision Transformer (ViT) |
-| Proposed Model | ReSA Transformer |
-| Attention Mechanism | Multi-Head Self Attention |
-| Optimization | Adam / AdamW Optimizer |
-| Loss Functions | CrossEntropy Loss + MSE Loss |
+**Hithashree K S**
 
----
+🎓 Computer Science Engineering Graduate (2026)
 
-# Performance Comparison
+🔗 GitHub: Hithashree2004
 
-| Metric | Existing ViT | Proposed ReSA Transformer |
-|---|---:|---:|
-| Training Accuracy | 96.58% | 96.94% |
-| Best Validation Accuracy | 98.94% | 99.65% |
-| F1-Score | 0.9892 | 0.9965 |
-| Precision | 0.9895 | 0.9965 |
-| Recall | 0.9894 | 0.9965 |
-| Missed per 1000 Samples | 18 | 3 |
-| Accuracy Improvement | — | +0.71% |
+📧 Email: [hithashreeskardya@gmail.com](mailto:hithashreeskardya@gmail.com)
+
+🌐 Portfolio: https://hithashree-ks-portfolio.vercel.app/
 
 ---
 
-# Hardware Requirements
+## 📌 Project Title
 
-| Component | Specification |
-|---|---|
-| Processor | Intel Core i5 / i7 |
-| RAM | 16 GB |
-| GPU | NVIDIA T4 GPU |
-| Storage | 250 GB+ |
-| System Type | 64-bit System |
-
----
-
-# Software Requirements
-
-| Component | Specification |
-|---|---|
-| Operating System | Windows 10 |
-| Programming Language | Python |
-| Platform | Google Colab |
-| Framework | PyTorch |
-| Libraries | OpenCV, NumPy, Pandas, PIL |
-| Dataset Format | SVS Whole Slide Images |
-
----
-
-# Technologies Used
-
-- Python
-- PyTorch
-- OpenCV
-- NumPy
-- Pandas
-- PIL
-- Google Colab
-- NVIDIA T4 GPU
-
----
-
-# Applications
-
-- Ovarian cancer tissue analysis
-- Histopathological image classification
-- Medical image analysis
-- AI-assisted pathology systems
-- Early cancer detection support
-
----
-
-# Advantages
-
-- Handles very large Whole Slide Images
-- Better contextual tissue understanding
-- Improved classification accuracy
-- Efficient transformer-based learning
-- Reduced background noise influence
-- Improved attention on important tissue regions
-
----
-
-# Future Scope
-
-- Real-time pathology assistance systems
-- Multi-cancer histopathological analysis
-- Clinical deployment support
-- Integration with hospital diagnostic systems
-- Advanced cancer grading and staging
-
----
-
-# Conclusion
-
-The Proposed ReSA Transformer successfully improved ovarian cancer histopathological image analysis compared to the Existing Vision Transformer baseline.
-
-By integrating:
-
-- contextual learning,
-- multi-scale feature encoding,
-- structure-aware positional encoding,
-- and focus-aware attention,
-
-the proposed model achieved improved validation accuracy and better tissue feature understanding for ovarian cancer detection.
+**Deep Learning-Based Ovarian Cancer Detection and Analysis using Existing ViT and Proposed ReSA Transformer Architecture**
